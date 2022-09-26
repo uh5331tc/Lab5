@@ -73,20 +73,16 @@ def display_all_records():
 ##todo add new record. What if user wants to add a record that already exists?'
 def add_new_record():
 
-    get_request = input('Enter Y to add a new player or enter E to edit an existing player ')
+    print('Enter the information of the new player: ')
     
-    if get_request == 'Y':
-        new_player_name = input('Enter the name of the new player in this format: first name last name, country, number of catches ')
-        new_player_country = input('Enter the country ')
-        new_player_catches = input('Enter the players catches ')
+    new_player_name = input('Enter the name of the new player: ')
+    new_player_country = input('Enter the country ')
+    new_player_catches = input('Enter the players catches ')
 
-    new_player_info = ( new_player_name, new_player_country, new_player_catches )
-
-
+    #new_player_info = new_player_name, new_player_country, new_player_catches 
     new_player_to_save = Players(name={new_player_name}, country={new_player_country}, catches ={new_player_catches})
     new_player_to_save.save()  #must SAVE every item
-    
-    print()
+
 
 
 def edit_existing_record():
